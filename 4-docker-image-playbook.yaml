@@ -1,0 +1,15 @@
+- hosts: all
+  tasks:
+    - name: build the image
+      docker_image:
+        name: app-php
+        state: present
+        source: build
+        build:
+          path: .
+          pull: yes 
+    - name: deploy Docker Compose stack
+      community.docker.docker_compose:
+        project_src: ~/sre-hello-world/
+        files:
+        - docker-compose.yml
