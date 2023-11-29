@@ -1,2 +1,5 @@
 [all]
-localhost
+LinuxSRV ansible_host=192.168.153.132 ansible_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa ansible_port=22
+
+#[test]
+#localhost ansible_host=127.0.0.1 ansible_port=22 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa

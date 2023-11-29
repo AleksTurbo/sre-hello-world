@@ -1,0 +1,38 @@
+### MAIN PlayBook ###
+
+##### Install postgresql
+# ---
+# - name: Postgre SQL database setup
+#   hosts: all
+#   become: true
+#   become_user: root
+#   roles:
+# #    - common_postgres
+# #    - install_postgres
+# #    - create_postgresql_db
+# #    - query_postgresql_db
+#     - { role: 'postgresql', become: true, become_user: root }
+
+##### Install Nginx
+# - name: Nginx setup
+#   hosts: all
+#   become: true
+#   become_user: root
+#   roles:
+#     - nginx
+
+##### Install docker-env
+# - name: docker setup
+#   hosts: all
+#   become: true
+#   become_user: root
+#   roles:
+#     - docker-env
+
+##### Install App
+- name: App setup
+  hosts: all
+  become: true
+  become_user: root
+  roles:
+    - app

@@ -1,0 +1,16 @@
+---
+# tasks file for app deploy
+- name: CurntDir
+  shell: pwd
+  register: playbook_path_output
+
+- debug: var=playbook_path_output.stdout
+
+- debug: var=role_path
+
+
+- name: deploy Docker Compose stack
+  community.docker.docker_compose:
+    project_src: .
+    files:
+    - "{{ role_path }}/files/docker-compose.yml"

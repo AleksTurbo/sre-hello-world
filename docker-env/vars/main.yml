@@ -1,0 +1,3 @@
+---
+# vars file for docker-env
+ansible_ssh_pipelining: true

@@ -1,6 +1,0 @@
-- hosts: all
-  tasks:
-    - name:
-      command: df -h
-      register: storage
-    - debug: var=storage.stdout_lines

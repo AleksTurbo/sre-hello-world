@@ -1,0 +1,6 @@
+---
+# vars file for app
+POSTGRES_DB: sre
+POSTGRES_USER: sre
+POSTGRES_PASSWORD: sre
+POSTGRES_HOST: 192.168.153.132

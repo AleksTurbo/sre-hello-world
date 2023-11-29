@@ -1,0 +1,22 @@
+version: "3.1"
+
+services:
+    nginx:
+        image: nginx:alpine
+        working_dir: /var/www/sre
+        volumes:
+            - ./:/var/www/sre
+            - ./app/app.conf:/etc/nginx/conf.d/default.conf
+            - ./app/app-defaults:/etc/nginx/app-defaults
+        ports:
+            - "86:80"
+    php:
+        build: images/php
+        working_dir: /var/www/sre
+        volumes:
+            - ./:/var/www/sre
+        environment:
+            - POSTGRES_HOST
+            - POSTGRES_DB
+            - POSTGRES_USER
+            - POSTGRES_PASSWORD

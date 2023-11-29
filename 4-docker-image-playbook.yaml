@@ -1,7 +1,0 @@
-- hosts: all
-  tasks:
-    - name: deploy Docker Compose stack
-      community.docker.docker_compose:
-        project_src: ~/sre-hello-world/
-        files:
-        - docker-compose.yml

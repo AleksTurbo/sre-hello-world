@@ -1,0 +1,9 @@
+### APP Update PlayBook ###
+
+##### Update App
+- name: App setup
+  hosts: all
+  become: true
+  become_user: root
+  roles:
+    - app-upd

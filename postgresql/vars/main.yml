@@ -1,0 +1,10 @@
+---
+# vars file for postgresql
+postgresql_version: "14"
+postgresql_bin_path: "/usr/lib/postgresql/{{ postgresql_version }}/bin"
+postgresql_data_dir: "/var/lib/postgresql/{{ postgresql_version }}/main"
+ansible_ssh_pipelining: true
+POSTGRES_DB: sre
+POSTGRES_USER: sre
+POSTGRES_PASSWORD: sre
+POSTGRES_HOST: 192.168.153.132
