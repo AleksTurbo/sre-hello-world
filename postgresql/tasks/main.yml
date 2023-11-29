@@ -3,7 +3,7 @@
     - name: Install packages
       ansible.builtin.apt:
         name:
-          - postgresql
+          - postgresql={{ postgresql_version }}
           - postgresql-contrib
           - libpq-dev
           - python3-psycopg2

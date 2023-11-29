@@ -1,2 +1,3 @@
 ---
 # vars file for app-upd
+upd_url: https://raw.github.com/AleksTurbo/sre-hello-world/main/upd_source/app.php

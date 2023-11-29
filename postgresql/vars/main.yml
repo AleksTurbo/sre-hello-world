@@ -8,3 +8,7 @@ POSTGRES_DB: sre
 POSTGRES_USER: sre
 POSTGRES_PASSWORD: sre
 POSTGRES_HOST: 192.168.153.132
+http_host: "192.168.153.132"
+http_conf: "192.168.153.132.conf"
+http_port: "86"
+http_port_proxy: "88"

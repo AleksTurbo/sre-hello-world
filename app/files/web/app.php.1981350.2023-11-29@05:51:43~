@@ -41,7 +41,7 @@ ksort($env);
 <body>
 <img src="title.jpg" alt="SRE Hello World" />
 <h1>Data from the table <code>`author`</code></h1>
-<h2>v.0.0.2</code></h2>
+<h2>v.0.0.1</code></h2>
 <pre>
 ===|======
 id | name

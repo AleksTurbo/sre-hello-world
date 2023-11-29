@@ -1,4 +1,0 @@
-http_host: "192.168.153.132"
-http_conf: "192.168.153.132.conf"
-http_port: "86"
-http_port_proxy: "88"

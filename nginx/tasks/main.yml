@@ -5,16 +5,12 @@
       loop: [ 'aptitude' ]
     - name: Install Packages
       apt: name={{ item }} update_cache=yes state=latest
-      loop: [ 'nginx', 'php-fpm' ]
+      loop: [ 'nginx' ]
 # Nginx Configuration
     - name: Sets Nginx conf file
       template:
         src: "files/nginx-proxy.conf.j2"
         dest: "/etc/nginx/sites-available/{{ http_conf }}"
-    - name: Sets Nginx index file
-      template:
-        src: "files/index.html"
-        dest: "/var/www/html/index.html"	
     - name: Enables new site
       file:
         src: "/etc/nginx/sites-available/{{ http_conf }}"

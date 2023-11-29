@@ -1,7 +1,26 @@
 ---
-# tasks file for app-upd
-- name: Download foo.conf
+# tasks download file for app-upd
+- name: Download app
   ansible.builtin.get_url:
-    url: http://example.com/path/file.conf
-    dest: /etc/foo.conf
-    mode: '0440'
+    url: "{{upd_url}}"
+    dest: "{{ role_path }}/files/app.php"
+    mode: '0644'
+
+# debug tasks for current dir
+- name: CurntDir
+  shell: pwd
+  register: playbook_path_output
+
+- debug: var=playbook_path_output.stdout
+
+- debug: var=role_path
+
+# tasks copy file for docker
+- name: Copy a new app file into place, backing up the original if it differs from the copied version
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/app.php"
+    dest: "{{ role_path }}/../app/files/web/app.php"
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
